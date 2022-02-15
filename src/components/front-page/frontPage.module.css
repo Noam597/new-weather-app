@@ -1,0 +1,91 @@
+
+.title{
+    margin: 0;
+}
+
+/* .select{
+    width: 150px;
+    outline: none;
+} */
+.label{
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    color: white;
+}
+.label select{
+    color: white;
+    font-size: 25px;
+    width:100%;
+    min-height: 35px;
+    /* background-color: black; */
+    border-radius: 3px;
+    /* border:2px solid #757bc9; */
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    cursor: pointer;
+    appearance: none;
+   
+}
+.label::after{
+    content: '';
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent;
+    border-left-color: white;
+    /* display: inline-block; */
+    position: absolute;
+    right: 10px;
+    bottom: 12.5px;
+
+}
+
+
+
+.clock{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+}
+.clock_night{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+}
+
+.early_morning{
+    background: radial-gradient(orange,yellow,white,lightblue,blue);
+    background: -moz-radial-gradient(top left,orange,yellow,white,lightblue,blue);
+    background: -webkit-radial-gradient(bottom,orange,yellow,white,lightblue,blue);
+    
+    width: 100vw;
+    height: 100vh;
+}
+.afternoon{
+    margin: auto;
+    background: -webkit-linear-gradient(bottom,white,lightblue,blue);
+    width: 100vw;
+    height: 100vh;
+}
+.dusk{
+    background: -webkit-linear-gradient(bottom,black,orange,red,purple);
+    width: 100vw;
+    height: 100vh;
+}
+
+.night{
+    background: -webkit-linear-gradient(bottom,lightblue,blue,#121296,black);
+    width: 100vw;
+    height: 100vh;
+}
+.selectNight{
+    background-color: black;
+}
+.selectDusk{
+    background-color:purple;
+}
+.selectAfternoon{
+    color: white;
+    background-color: blue;
+ 
+}
