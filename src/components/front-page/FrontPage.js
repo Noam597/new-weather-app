@@ -58,30 +58,7 @@ export const FrontPage = () => {
    return `${day} ${date} ${month} ${year}`
   };
 
-    // const getWeather = ()=>{
-    //     axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${query},il&units=metric&APPID=34d5ded21f34b228638abfd12a6759cd`)
-    //     .then(res=>{
-    //         console.log(res.data.main);
-    //         console.log(res.data.weather[0].main);
-    //         setTemp_min(`${res.data.main.temp_min}`);
-    //         setTemp_max(`${res.data.main.temp_max}`);
-    //         const icon = res.data.weather[0].main;
-    //         if(icon == 'Clouds'){
-    //             setWeatherIcon("fas fa-cloud")
-    //         }else if(icon === "Rain" || "Thunderstorm"){
-    //             setWeatherIcon('fas fa-cloud-showers-heavy')
-    //         }else if(icon === "Drizzle"){
-    //             setWeatherIcon('fas fa-cloud-sun-rain')}
-    //             else if(icon === "Snow"){
-    //                 setWeatherIcon('fas fa-snowflake')}
-    //                 else if(icon === "Clear"){
-    //                     setWeatherIcon('fas fa-sun')}
-    //                     else{
-    //                         setWeatherIcon('fas fa-wind">')
-    //                     }
-    //     })
-    // };
-
+   
     useEffect(() => {
           
 
