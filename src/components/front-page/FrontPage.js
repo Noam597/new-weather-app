@@ -2,13 +2,11 @@ import React,{useState,useEffect} from 'react';
 import styles from './frontPage.module.css'
 import { cities } from './cities';
 import axios from 'axios';
-
+import switchIcon from './swithIcon';
 
 export const FrontPage = () => {
 
     const [query, setQuery] = useState('Jerusalem');
-    const [cityName, setCityName] = useState([...cities]);
-    const [weatherStats, setWeatherStats] = useState('');
     const [selectBar, setSelectBar] = useState('')
     const [weatherIcon, setWeatherIcon] = useState('');
     const [temp_min, setTemp_min] = useState('');
@@ -68,27 +66,8 @@ export const FrontPage = () => {
             console.log(res.data.weather[0].main);
             setTemp_min(`${res.data.main.temp_min}`);
             setTemp_max(`${res.data.main.temp_max}`);
-            const icon = res.data.weather[0].main;
-            if(icon == 'Clouds'){
-                setWeatherIcon("fas fa-cloud")
-            }
-            else if(icon === "Rain"){
-                setWeatherIcon('fas fa-cloud-showers-heavy')
-            }
-              else if(icon === "Thunderstorm"){
-                setWeatherIcon('fas fa-cloud-showers-heavy')
-            }
-            else if(icon == "Drizzle"){
-                setWeatherIcon('fas fa-cloud-sun-rain')}
-                else if(icon === "Snow"){
-                    setWeatherIcon('fas fa-snowflake')}
-                    else if(icon === "Clear"){
-                        setWeatherIcon("fas fa-sun")}
-                        else{
-                            setWeatherIcon('fas fa-wind">')
-                        }
-                        
-                   
+            let icon = res.data.weather[0].main;    
+             setWeatherIcon(switchIcon(icon));
         })
       
     }, [query,weatherIcon]);
@@ -99,21 +78,16 @@ export const FrontPage = () => {
       <div>
           <label className={styles.label}>Select City: 
       <select className={selectBar} value={query} onChange={e=>{setQuery(e.target.value)}}>
-               {cityName.map((city,i)=>
+               {cities.map((city,i)=>
                     
                     <option key={i} value={city} >{city}</option>
                    
                )} </select></label></div>
-      <div>
-                  
+      <div>   
                <h2 className={fontBackground}>{currentDate(new Date())}</h2>   <br/></div>
                <h1 className={fontBackground}>{query}</h1>
-      <h3>temperture {temp_min}° - {temp_max}°</h3>
-      <h1 className={fontBackground}><i className={weatherIcon}></i> </h1>
-      {/* <button onClick={getWeather}>get the weather</button> */}
-      
-                 <span>{weatherStats} </span>
-
+               <h3>temperture {temp_min}° - {temp_max}°</h3>
+               <h1 className={fontBackground}><i className={weatherIcon}></i> </h1>
                  <p className={fontBackground}>{clock}</p>
-  </div>;
+      </div>;
 };
